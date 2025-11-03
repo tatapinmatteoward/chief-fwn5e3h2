@@ -1,0 +1,351 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Steelers Roster: Meet the Black and Gold Warriors";
+const pageDescription = "Dive into the Pittsburgh Steelers' current roster, spotlighting key players across offense, defense, and special teams. Ignite your fan fury with profiles, stats, and the heart of Steel City pride.";
+
+const offensivePlayers = [
+  { name: "Kerry Collins", position: "QB", number: 12, stats: "2,847 Yds, 17 TDs" },
+  { name: "Le'Veon Bell", position: "RB", number: 26, stats: "1,243 Yds, 8 TDs" },
+  { name: "Mike Wallace", position: "WR", number: 13, stats: "687 Yds, 5 TDs" },
+  { name: "Antonio Brown", position: "WR", number: 17, stats: "843 Yds, 7 TDs" },
+  { name: "Lance Louis", position: "OT", number: 74, stats: "Start" },
+  { name: "Marcus Gilbert", position: "OT", number: 72, stats: "Start" },
+];
+
+const defensivePlayers = [
+  { name: "T.J. Watt", position: "LB", number: 90, stats: "11.5 Sacks" },
+  { name: "Cameron Heyward", position: "DT", number: 97, stats: "57 Tackles" },
+  { name: "Alex Highsmith", position: "LB", number: 54, stats: "16 Tackles" },
+  { name: "Minkah Fitzpatrick", position: "S", number: 28, stats: "3 Ints, 42 Tackles" },
+  { name: "Jalen Nailor", position: "S", number: 24, stats: "8 Tackles" },
+  { name: "C.J. Mosley", position: "LB", number: 52, stats: "57 Tackles" },
+];
+
+const specialTeamsPlayers = [
+  { name: "Chris Boswell", position: "K", number: 4, stats: "89% FG, 18/20" },
+  { name: "Benji Marshall", position: "P", number: 44, stats: "43.2 Avg, 25 Punt Returns" },
+  { name: "T.J. Watt", position: "PR", number: 90, stats: "14.7 Avg Return" },
+  { name: "Chris Boswell", position: "KR", number: 4, stats: "11.2 Avg Return" },
+];
+
+const teamStats = {
+  wins: 12,
+  losses: 4,
+  conference: "AFC North",
+  record: "12-4",
+  division: "Steel City Pride"
+};
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <div class="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+    {/* Hero Section */}
+    <div class="relative bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 py-20 border-b-4 border-amber-500">
+      <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCI+CiAgPHJlY3Qgd2lkdGg9IjUwIiBoZWlnaHQ9IjUwIiBmaWxsPSJub25lIi8+CiAgPHBhdGggZD0iTTAgMGg1MHY1MEgweiIgZmlsbD0idHJhbnNwYXJlbnQiLz4KICA8Y2lyY2xlIGN4PSIyNSIgY3k9IjI1IiByPSIxIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMSkiLz4KPC9zdmc+')] opacity-10"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+          <div class="md:w-1/2 mb-10 md:mb-0">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 text-amber-400 tracking-wide">
+              Steelers Roster
+            </h1>
+            <h2 class="text-2xl md:text-4xl font-bold mb-6 text-white">
+              Meet the Black and Gold Warriors
+            </h2>
+            <p class="text-lg md:text-xl text-gray-300 max-w-2xl">
+              Dive into the Pittsburgh Steelers' current roster, spotlighting key players across offense, defense, and special teams. Ignite your fan fury with profiles, stats, and the heart of Steel City pride.
+            </p>
+            <div class="mt-8 flex space-x-4">
+              <button class="px-6 py-3 bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                View Season Stats
+              </button>
+              <button class="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105">
+                Player Highlights
+              </button>
+            </div>
+          </div>
+          <div class="md:w-1/2 flex justify-center">
+            <div class="relative">
+              <div class="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-amber-500 to-amber-700 rounded-full flex items-center justify-center shadow-2xl border-8 border-gray-900">
+                <div class="text-center">
+                  <div class="text-5xl font-bold text-gray-900">12</div>
+                  <div class="text-xl font-semibold text-gray-900">Wins</div>
+                </div>
+              </div>
+              <div class="absolute -top-4 -right-4 bg-amber-500 text-gray-900 px-4 py-2 rounded-lg font-bold transform rotate-6">
+                2023 Season
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Stats Bar */}
+    <div class="bg-gray-800 py-6 border-b border-gray-700">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap justify-center gap-8">
+          <div class="text-center">
+            <div class="text-3xl font-bold text-amber-400">{teamStats.wins}</div>
+            <div class="text-gray-400">Wins</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-amber-400">{teamStats.losses}</div>
+            <div class="text-gray-400">Losses</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-amber-400">{teamStats.record}</div>
+            <div class="text-gray-400">Record</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-amber-400">{teamStats.division}</div>
+            <div class="text-gray-400">Division</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Main Content */}
+    <div class="container mx-auto px-4 py-16">
+      {/* Intro Section */}
+      <div class="mb-20 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-amber-400">
+          Fueling the Fire of Pittsburgh Pride
+        </h2>
+        <div class="max-w-3xl mx-auto text-xl text-gray-300">
+          <p class="mb-4">Welcome to the heart of the Steel City Strikers hub—where we celebrate the <span class="font-bold text-amber-400">Pittsburgh Steelers</span> roster that embodies grit, glory, and unrelenting fury on the gridiron.</p>
+          <p>This dynamic lineup of warriors is ready to defend the black and gold in the 2023 season. From explosive playmakers to iron-clad defenders, get to know the players who ignite Heinz Field (or Acrisure Stadium now) every Sunday.</p>
+        </div>
+      </div>
+
+      {/* Offense Section */}
+      <section class="mb-20">
+        <div class="flex items-center mb-8">
+          <div class="w-4 h-8 bg-amber-500 mr-4"></div>
+          <h2 class="text-3xl font-bold text-white">Offense: Lighting Up the Scoreboard</h2>
+          <div class="flex-grow h-1 bg-gray-700 ml-4"></div>
+        </div>
+        <p class="text-gray-400 mb-8 max-w-3xl">The Steelers' offense is a blend of veteran savvy and young explosiveness, with key players ready to ignite the scoreboard with every snap.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {offensivePlayers.map((player, index) => (
+            <div key={index} class="bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 class="text-2xl font-bold text-white">{player.name}</h3>
+                    <div class="flex items-center">
+                      <span class="bg-gray-700 text-amber-400 px-3 py-1 rounded-full text-sm font-bold mr-3">{player.position}</span>
+                      <span class="bg-gray-700 text-white px-3 py-1 rounded-full text-sm">{player.number}</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-amber-500 to-amber-700">
+                    <span class="text-xl font-bold text-gray-900">{player.number}</span>
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <div class="text-gray-400 text-sm">STATS</div>
+                  <div class="text-xl font-bold text-amber-400">{player.stats}</div>
+                </div>
+                <div class="mt-6 flex justify-between">
+                  <button class="text-sm px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors">
+                    View Profile
+                  </button>
+                  <button class="text-sm px-4 py-2 bg-amber-500 hover:bg-amber-600 text-gray-900 rounded-lg transition-colors">
+                    Game Stats
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Defense Section */}
+      <section class="mb-20">
+        <div class="flex items-center mb-8">
+          <div class="w-4 h-8 bg-red-500 mr-4"></div>
+          <h2 class="text-3xl font-bold text-white">Defense: Steel Walls of Pittsburgh</h2>
+          <div class="flex-grow h-1 bg-gray-700 ml-4"></div>
+        </div>
+        <p class="text-gray-400 mb-8 max-w-3xl">The Steelers' defense is known for its intimidating presence and relentless pressure. These players form the backbone of the team's success on the defensive side of the ball.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {defensivePlayers.map((player, index) => (
+            <div key={index} class="bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 class="text-2xl font-bold text-white">{player.name}</h3>
+                    <div class="flex items-center">
+                      <span class="bg-gray-700 text-red-400 px-3 py-1 rounded-full text-sm font-bold mr-3">{player.position}</span>
+                      <span class="bg-gray-700 text-white px-3 py-1 rounded-full text-sm">{player.number}</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-red-500 to-red-700">
+                    <span class="text-xl font-bold text-gray-900">{player.number}</span>
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <div class="text-gray-400 text-sm">STATS</div>
+                  <div class="text-xl font-bold text-red-400">{player.stats}</div>
+                </div>
+                <div class="mt-6 flex justify-between">
+                  <button class="text-sm px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors">
+                    View Profile
+                  </button>
+                  <button class="text-sm px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg transition-colors">
+                    Game Stats
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Special Teams Section */}
+      <section class="mb-20">
+        <div class="flex items-center mb-8">
+          <div class="w-4 h-8 bg-blue-500 mr-4"></div>
+          <h2 class="text-3xl font-bold text-white">Special Teams: The Unsung Heroes</h2>
+          <div class="flex-grow h-1 bg-gray-700 ml-4"></div>
+        </div>
+        <p class="text-gray-400 mb-8 max-w-3xl">Special teams represent the pulse of excitement in Pittsburgh football. These players often make game-changing plays that can shift momentum in an instant.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {specialTeamsPlayers.map((player, index) => (
+            <div key={index} class="bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 class="text-xl font-bold text-white">{player.name}</h3>
+                    <div class="flex items-center">
+                      <span class="bg-gray-700 text-blue-400 px-3 py-1 rounded-full text-sm font-bold mr-3">{player.position}</span>
+                      <span class="bg-gray-700 text-white px-3 py-1 rounded-full text-sm">{player.number}</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-blue-700">
+                    <span class="text-xl font-bold text-gray-900">{player.number}</span>
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <div class="text-gray-400 text-sm">STATS</div>
+                  <div class="text-lg font-bold text-blue-400">{player.stats}</div>
+                </div>
+                <div class="mt-6 flex justify-between">
+                  <button class="text-sm px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors">
+                    View Profile
+                  </button>
+                  <button class="text-sm px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors">
+                    Game Stats
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <div class="bg-gradient-to-r from-gray-800 to-gray-900 border border-amber-500 rounded-2xl p-8 text-center mb-20">
+        <h2 class="text-3xl font-bold mb-4 text-amber-400">Ready to Join the Fury?</h2>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-8">Become part of the Pittsburgh Steelers family and experience the thrill of Steel City Pride.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="px-8 py-4 bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+            Join the Fan Club
+          </button>
+          <button class="px-8 py-4 bg-gray-700 hover:bg-gray-600 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105">
+            Purchase Gear
+          </button>
+        </div>
+      </div>
+    </div>
+
+    {/* Footer */}
+    <footer class="bg-gray-900 border-t border-gray-800 py-12">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <h3 class="text-2xl font-bold text-amber-400 mb-4">Igniting Pittsburgh Pride</h3>
+          <p class="text-gray-400 max-w-xl mx-auto mb-8">Your Hub for Steelers News, Highlights, and Fan Fury</p>
+          <div class="flex justify-center space-x-6">
+            <a href="#" class="text-gray-400 hover:text-amber-400 transition-colors">
+              <i class="fab fa-facebook fa-2x"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-amber-400 transition-colors">
+              <i class="fab fa-twitter fa-2x"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-amber-400 transition-colors">
+              <i class="fab fa-instagram fa-2x"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-amber-400 transition-colors">
+              <i class="fab fa-youtube fa-2x"></i>
+            </a>
+          </div>
+          <div class="mt-8 text-gray-600 text-sm">
+            © {new Date().getFullYear()} Steelers Roster. All rights reserved. Pittsburgh Steelers® and the Pittsburgh Steelers logo are registered trademarks of the Pittsburgh Steelers.
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <style>
+  @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      .animate-fade-in {
+        animation: fadeIn 0.8s ease-out forwards;
+      }
+      
+      .player-card {
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      
+      .player-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+      }
+      
+      .gradient-text {
+        background: linear-gradient(45deg, #f6ad55, #f56565, #4299e1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      
+      .border-gradient {
+        position: relative;
+      }
+      
+      .border-gradient::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 12px;
+        border: 2px solid transparent;
+        background: linear-gradient(45deg, #f6ad55, #f56565, #4299e1) border-box;
+        -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: destination-out;
+        mask-composite: exclude;
+        z-index: -1;
+      }
+</style>
+
+  <script>
+    {`
+      document.addEventListener('DOMContentLoaded', function() {
+        const cards = document.querySelectorAll('.player-card');
+        cards.forEach((card, index) => {
+          card.style.animationDelay = (index * 0.1) + 's';
+        });
+      });
+    `}
+  </script>
+</Layout>

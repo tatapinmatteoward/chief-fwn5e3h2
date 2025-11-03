@@ -1,0 +1,245 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Pittsburgh Steelers 2023 Schedule: Gear Up for Gridiron Glory";
+const pageDescription = "Dive into the 2023 Pittsburgh Steelers schedule with Steel City Strikers. Get the full rundown of every matchup, key dates, and tips to fuel your fan fury as the Black and Gold battle for supremacy in the Steel City.";
+
+const scheduleData = [
+  { week: 1, opponent: "Cincinnati Bengals", date: "September 10, 2023", time: "1:00 PM ET", location: "Acrisure Stadium", result: "W 24-17" },
+  { week: 2, opponent: "Houston Texans", date: "September 17, 2023", time: "1:00 PM ET", location: "Acrisure Stadium", result: "W 31-14" },
+  { week: 3, opponent: "New York Jets", date: "September 24, 2023", time: "1:00 PM ET", location: "Acrisure Stadium", result: "L 13-10" },
+  { week: 4, opponent: "Baltimore Ravens", date: "October 1, 2023", time: "1:00 PM ET", location: "Acrisure Stadium", result: "W 27-17" },
+  { week: 5, opponent: "Tennessee Titans", date: "October 8, 2023", time: "1:00 PM ET", location: "Acrisure Stadium", result: "W 21-14" },
+  { week: 6, opponent: "Jacksonville Jaguars", date: "October 15, 2023", time: "1:00 PM ET", location: "Acrisure Stadium", result: "W 28-21" },
+  { week: 7, opponent: "Miami Dolphins", date: "October 22, 2023", time: "1:00 PM ET", location: "Acrisure Stadium", result: "L 23-20" },
+  { week: 8, opponent: "Cleveland Browns", date: "October 29, 2023", time: "1:00 PM ET", location: "Acrisure Stadium", result: "W 26-20" },
+  { week: 9, opponent: "Green Bay Packers", date: "November 5, 2023", time: "1:00 PM ET", location: "Acrisure Stadium", result: "L 27-24" },
+  { week: 10, opponent: "Minnesota Vikings", date: "November 12, 2023", time: "1:00 PM ET", location: "Acrisure Stadium", result: "W 34-27" },
+  { week: 11, opponent: "New England Patriots", date: "November 19, 2023", time: "1:00 PM ET", location: "Acrisure Stadium", result: "W 28-24" },
+  { week: 12, opponent: "Buffalo Bills", date: "November 26, 2023", time: "1:00 PM ET", location: "Acrisure Stadium", result: "L 17-14" },
+  { week: 13, opponent: "Atlanta Falcons", date: "December 3, 2023", time: "1:00 PM ET", location: "Acrisure Stadium", result: "W 23-10" },
+  { week: 14, opponent: "Indianapolis Colts", date: "December 10, 2023", time: "1:00 PM ET", location: "Acrisure Stadium", result: "W 24-17" },
+  { week: 15, opponent: "Kansas City Chiefs", date: "December 17, 2023", time: "1:00 PM ET", location: "Acrisure Stadium", result: "L 28-21" },
+  { week: 16, opponent: "Cleveland Browns", date: "December 24, 2023", time: "1:00 PM ET", location: "Acrisure Stadium", result: "W 21-10" },
+  { week: 17, opponent: "Baltimore Ravens", date: "December 31, 2023", time: "1:00 PM ET", location: "Acrisure Stadium", result: "W 31-14" },
+];
+
+const seasonHighlights = [
+  { title: "Home Opener", description: "Welcome the Cincinnati Bengals to Acrisure Stadium – revenge is on the menu!", icon: "fa-fighters" },
+  { title: "Thanksgiving Thriller", description: "Face the Detroit Lions under the lights for a national feast of football fury.", icon: "fa-tree" },
+  { title: "Rivalry Rumble", description: "Doubleheader against the Baltimore Ravens – expect nothing less than total war.", icon: "fa-fist-raised" },
+  { title: "Playoff Push", description: "Late-season battles that could determine your team's championship destiny.", icon: "fa-trophy" },
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <div class="min-h-screen bg-gradient-to-br from-primary to-black text-white">
+    {/* Hero Section */}
+    <section class="relative py-20 md:py-32 overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-primary/90"></div>
+        <div class="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center mix-blend-overlay"></div>
+      </div>
+      
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            Pittsburgh Steelers <span class="text-accent">2023</span> Schedule
+          </h1>
+          <p class="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto">
+            Gear Up for Gridiron Glory
+          </p>
+          <div class="bg-black/40 backdrop-blur-sm rounded-lg py-4 px-6 inline-block">
+            <p class="text-lg"><i class="fas fa-star text-yellow-400 mr-2"></i> Igniting Pittsburgh Pride: Your Hub for Steelers News, Highlights, and Fan Fury</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Season Highlights */}
+    <section class="py-16 bg-gradient-to-r from-primary to-accent/20">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">
+          Key Season <span class="text-accent">Highlights</span>
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {seasonHighlights.map((highlight, index) => (
+            <div key={index} class="bg-black/30 backdrop-blur-sm rounded-xl p-6 border border-accent/30 hover:border-accent transition-all duration-300 transform hover:-translate-y-2">
+              <div class="text-4xl mb-4 text-accent">
+                <i class={`fas ${highlight.icon}`}></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3">{highlight.title}</h3>
+              <p class="text-gray-300">{highlight.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Schedule Table */}
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center mb-8">
+          <h2 class="text-3xl md:text-4xl font-bold">
+            Complete <span class="text-accent">2023 Schedule</span>
+          </h2>
+          <div class="bg-accent/20 px-4 py-2 rounded-lg">
+            <span class="text-accent font-bold">PITTSBURGH STEELERS</span>
+          </div>
+        </div>
+        
+        <div class="overflow-x-auto rounded-xl border border-gray-700">
+          <table class="min-w-full">
+            <thead class="bg-gray-900/70">
+              <tr>
+                <th class="py-4 px-6 text-left font-bold text-accent border-b border-gray-700">Week</th>
+                <th class="py-4 px-6 text-left font-bold text-accent border-b border-gray-700">Opponent</th>
+                <th class="py-4 px-6 text-left font-bold text-accent border-b border-gray-700">Date & Time</th>
+                <th class="py-4 px-6 text-left font-bold text-accent border-b border-gray-700">Location</th>
+                <th class="py-4 px-6 text-left font-bold text-accent border-b border-gray-700">Result</th>
+              </tr>
+            </thead>
+            <tbody>
+              {scheduleData.map((game, index) => (
+                <tr key={index} class={`border-b border-gray-800 hover:bg-gray-900/50 transition-colors ${index % 2 === 0 ? 'bg-gray-900/30' : 'bg-transparent'}`}>
+                  <td class="py-4 px-6 font-bold">{game.week}</td>
+                  <td class="py-4 px-6">
+                    <div class="flex items-center">
+                      <span class="mr-3 text-accent">{game.opponent}</span>
+                      <span class="bg-gray-800 px-2 py-1 rounded text-xs">vs</span>
+                    </div>
+                  </td>
+                  <td class="py-4 px-6">
+                    <div class="font-medium">{game.date}</div>
+                    <div class="text-sm text-gray-400">{game.time}</div>
+                  </td>
+                  <td class="py-4 px-6 text-gray-300">{game.location}</td>
+                  <td class="py-4 px-6">
+                    <span class={`px-3 py-1 rounded-full text-sm font-bold ${game.result.startsWith('W') ? 'bg-green-900/50 text-green-400' : 'bg-red-900/50 text-red-400'}`}>
+                      {game.result}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    {/* Special Events */}
+    <section class="py-16 bg-gradient-to-r from-black to-primary">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">
+          Upcoming <span class="text-accent">Special Events</span>
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-gradient-to-br from-gray-900/80 to-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-accent transition-all duration-300">
+            <div class="text-5xl mb-4 text-accent">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">Week 10: Game Day Experience</h3>
+            <p class="text-gray-300 mb-4">Join us for an exclusive pre-game tailgate experience at Acrisure Stadium. Food trucks, live music, and special giveaways!</p>
+            <button class="bg-accent hover:bg-orange-500 text-black font-bold py-2 px-6 rounded-lg transition-colors">
+              Learn More
+            </button>
+          </div>
+          
+          <div class="bg-gradient-to-br from-gray-900/80 to-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-accent transition-all duration-300">
+            <div class="text-5xl mb-4 text-accent">
+              <i class="fas fa-ticket-alt"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">Season Ticket Holder Benefits</h3>
+            <p class="text-gray-300 mb-4">Exclusive access to premium seating, meet and greets with players, and special discounts at Steelers merchandise stores.</p>
+            <button class="bg-accent hover:bg-orange-500 text-black font-bold py-2 px-6 rounded-lg transition-colors">
+              View Benefits
+            </button>
+          </div>
+          
+          <div class="bg-gradient-to-br from-gray-900/80 to-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-accent transition-all duration-300">
+            <div class="text-5xl mb-4 text-accent">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">Steel City Strikers Fan Club</h3>
+            <p class="text-gray-300 mb-4">Join our community of passionate Steelers fans. Weekly watch parties, exclusive content, and special events.</p>
+            <button class="bg-accent hover:bg-orange-500 text-black font-bold py-2 px-6 rounded-lg transition-colors">
+              Join Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* CTA Section */}
+    <section class="py-20 bg-gradient-to-r from-accent to-primary">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-5xl font-bold mb-6">
+          Ready to <span class="text-black">Roar</span> for Victory?
+        </h2>
+        <p class="text-xl max-w-3xl mx-auto mb-10 text-black/90">
+          Get your tickets, gear up for game day, and show your pride for the Black and Gold!
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="bg-black text-white font-bold py-4 px-8 rounded-lg hover:bg-gray-800 transition-colors text-lg">
+            Buy Tickets Now
+          </button>
+          <button class="bg-black/30 text-white font-bold py-4 px-8 rounded-lg hover:bg-black/50 transition-colors text-lg">
+            Steelers Merchandise
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  .pulse {
+    animation: pulse 2s infinite;
+  }
+  
+  .schedule-card {
+    transition: all 0.3s ease;
+  }
+  
+  .schedule-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(246, 173, 85, 0.2);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(to right, #f6ad55, #ffd166);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>
+
+<script>
+  // Add animation to cards on scroll
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.schedule-card');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    cards.forEach(card => {
+      card.style.opacity = 0;
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(card);
+    });
+  });
+</script>

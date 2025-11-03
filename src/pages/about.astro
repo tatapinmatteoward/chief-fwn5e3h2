@@ -1,0 +1,224 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "About Chiefs Chronicle";
+const pageDescription = "Discover the story behind Chiefs Chronicle, a timeless tribute to the Kansas City Chiefs and the passionate spirit of Chiefs Kingdom. Immerse yourself in nostalgic sports journalism that captures the essence of the game.";
+
+const founders = [
+  {
+    name: "John Morrison",
+    role: "Editor-in-Chief",
+    bio: "Former sports journalist with 20 years of experience covering the NFL"
+  },
+  {
+    name: "Sarah Williams",
+    role: "Chief Storyteller",
+    bio: "Kansas City native with a passion for preserving sports history"
+  },
+  {
+    name: "Michael Chen",
+    role: "Archive Director",
+    bio: "Digital archivist specializing in vintage sports media"
+  }
+];
+
+const milestones = [
+  { year: "2018", event: "Founded Chiefs Chronicle with 50 articles" },
+  { year: "2020", event: "Reached 1000+ subscribers" },
+  { year: "2021", event: "Awarded Best Nostalgic Sports Blog" },
+  { year: "2023", event: "Expanded to 5000+ articles" }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <div class="relative">
+    <!-- Hero Section -->
+    <div class="relative bg-gradient-to-r from-[#0a2e5c] to-[#d4af37] py-24">
+      <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-3xl mx-auto text-center">
+          <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 tracking-wide">
+            About Chiefs Chronicle
+          </h1>
+          <p class="text-xl md:text-2xl text-white font-serif italic">
+            Chronicling the Heartbeat of Chiefs Kingdom with Timeless Passion
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tagline Banner -->
+    <div class="bg-[#0a2e5c] py-4">
+      <div class="container mx-auto px-4">
+        <p class="text-center text-white font-sans text-lg">
+          <i class="fas fa-star text-[#d4af37] mx-2"></i>
+          A timeless tribute to the Kansas City Chiefs and the passionate spirit of Chiefs Kingdom
+          <i class="fas fa-star text-[#d4af37] mx-2"></i>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Introduction Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="flex items-start mb-10">
+          <div class="mr-6 text-[#d4af37] text-4xl">
+            <i class="fas fa-feather-alt"></i>
+          </div>
+          <div>
+            <h2 class="text-3xl font-bold text-[#0a2e5c] mb-4">Welcome to Chiefs Chronicle</h2>
+            <p class="text-lg text-gray-700 leading-relaxed font-serif">
+              In the heart of America's heartland, where red and gold waves crash like a sea of 
+              unwavering loyalty, stands <em>Chiefs Chronicle</em>. Founded on the enduring love for 
+              the Kansas City Chiefs, our platform is more than just a sports site—it's a living 
+              archive of triumphs, heartbreaks, and the unbreakable bond that unites Chiefs Kingdom.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-[#f8f5f0] p-8 rounded-lg border border-[#d4af37] shadow-lg">
+          <p class="text-lg text-gray-800 leading-relaxed font-serif">
+            <span class="text-[#0a2e5c] font-bold">Our Story</span> We launched <em>Chiefs Chronicle</em> 
+            in the spirit of classic sports journalism, drawing inspiration from the golden era of 
+            ink-stained pages and passionate play-by-plays. In an age of fleeting highlights, we believe 
+            in the power of storytelling that endures. Whether it's a deep dive into Arrowhead Stadium's 
+            roaring legacy or a heartfelt tribute to the players who've worn the royal blue and gold, 
+            we're dedicated to preserving the rich tapestry of Chiefs history.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founders Section -->
+  <section class="py-16 bg-[#f8f5f0]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-[#0a2e5c] mb-4">Our Leadership</h2>
+        <div class="w-24 h-1 bg-[#d4af37] mx-auto"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        {founders.map((founder, index) => (
+          <div key={index} class="bg-white p-6 rounded-lg shadow-md border border-[#d4af37] transform hover:scale-105 transition-transform duration-300">
+            <div class="text-center">
+              <div class="w-24 h-24 rounded-full bg-[#0a2e5c] flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-user text-white text-4xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-[#0a2e5c]">{founder.name}</h3>
+              <p class="text-[#d4af37] font-semibold mb-3">{founder.role}</p>
+              <p class="text-gray-700 text-sm">{founder.bio}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Milestones Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-[#0a2e5c] mb-4">Our Journey</h2>
+        <div class="w-24 h-1 bg-[#d4af37] mx-auto"></div>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="relative">
+          <!-- Timeline line -->
+          <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-[#d4af37] transform -translate-x-1/2"></div>
+          
+          <div class="space-y-12">
+            {milestones.map((milestone, index) => (
+              <div key={index} class={`relative flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+                <div class="md:w-1/2 mb-4 md:mb-0 md:px-8">
+                  <div class="bg-[#0a2e5c] text-white p-6 rounded-lg shadow-lg">
+                    <div class="text-2xl font-bold text-[#d4af37] mb-2">{milestone.year}</div>
+                    <p class="font-serif">{milestone.event}</p>
+                  </div>
+                </div>
+                <div class="md:w-1/2 flex items-center justify-center">
+                  <div class="w-8 h-8 rounded-full bg-[#d4af37] border-4 border-white relative z-10"></div>
+                </div>
+                <div class="md:w-1/2 md:px-8"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Statement -->
+  <section class="py-16 bg-gradient-to-r from-[#0a2e5c] to-[#d4af37] text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">Our Mission</h2>
+        <div class="w-24 h-1 bg-white mx-auto mb-8"></div>
+        <p class="text-xl font-serif italic leading-relaxed">
+          To preserve and celebrate the legendary story of the Kansas City Chiefs through 
+          thoughtful storytelling, historical documentation, and reverence for the community 
+          that makes Chiefs Kingdom the greatest in sports.
+        </p>
+        <div class="mt-10 flex justify-center">
+          <div class="bg-white bg-opacity-20 p-6 rounded-lg max-w-2xl">
+            <p class="text-lg font-serif">
+              <i class="fas fa-quote-left text-2xl mr-2"></i>
+              Every game remembered, every player honored, every moment captured with the 
+              passion that defines our beloved Chiefs.
+              <i class="fas fa-quote-right text-2xl ml-2"></i>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="bg-[#f8f5f0] p-8 rounded-lg border border-[#d4af37]">
+          <div class="text-5xl text-[#0a2e5c] mb-6">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          <p class="text-2xl font-serif italic text-gray-800 mb-8">
+            The Chiefs Chronicle is more than a website—it's a sacred space where the 
+            stories of our beloved team come alive, where every victory and setback is 
+            preserved for future generations, and where the spirit of Chiefs Kingdom 
+            continues to soar.
+          </p>
+          <p class="text-lg font-bold text-[#0a2e5c]">— Chief Editor John Morrison</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+  
+  .fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .fade-in-delay {
+    animation: fadeIn 0.8s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+  
+  .hover-scale {
+    transition: transform 0.3s ease;
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.03);
+  }
+</style>

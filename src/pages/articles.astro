@@ -1,0 +1,240 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Chiefs Chronicle Articles";
+const pageDescription = "Explore the latest and timeless articles from Chiefs Chronicle, chronicling the heartbeat of Chiefs Kingdom with passion and nostalgia. Dive into game recaps, player profiles, and historic moments.";
+
+const featuredArticles = [
+  {
+    title: "Mahomes Magic: The Rise of a Dynasty",
+    excerpt: "Patrick Mahomes continues to redefine quarterback excellence. Relive his iconic plays and what lies ahead for the Chiefs.",
+    category: "Player Spotlight",
+    date: "October 15, 2023"
+  },
+  {
+    title: "Arrowhead's Roar: A Legacy of Sound",
+    excerpt: "The loudest stadium in the NFL isn't just noise—it's the soul of Chiefs Kingdom. Explore its history and impact.",
+    category: "Stadium History",
+    date: "September 28, 2023"
+  },
+  {
+    title: "Super Bowl Reflections: Chiefs' Triumphant Journey",
+    excerpt: "From heartbreak to glory, trace the Chiefs' path to Super Bowl victory through decades of unforgettable moments.",
+    category: "Historic Moments",
+    date: "February 10, 2023"
+  }
+];
+
+const archiveArticles = [
+  { title: "The Legend of Larry Johnson", excerpt: "A deep dive into the career of one of Kansas City's most beloved running backs.", date: "August 5, 2023" },
+  { title: "From Oakland to Kansas City", excerpt: "How the franchise's relocation shaped the modern Chiefs identity.", date: "July 22, 2023" },
+  { title: "The Defense That Changed Everything", excerpt: "Examining the 1970s Chiefs defense that revolutionized football strategy.", date: "June 18, 2023" },
+  { title: "Chiefs Kingdom: Community Connections", excerpt: "How the team's impact extends far beyond the football field.", date: "May 30, 2023" },
+  { title: "The Evolution of the Arrowhead", excerpt: "A visual journey through the stadium's transformation over the decades.", date: "April 12, 2023" },
+  { title: "Chiefs Through the Decades", excerpt: "An overview of the franchise's most pivotal eras and milestones.", date: "March 4, 2023" }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <div class="relative bg-gradient-to-r from-[#0a2e5c] to-[#d4af37] py-20 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEiIGZpbGw9IiNmZmYiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=')]"></div>
+    </div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          Chiefs Chronicle Articles
+        </h1>
+        <p class="text-xl md:text-2xl text-white/90 font-serif italic mb-8">
+          Chronicling the Heartbeat of Chiefs Kingdom with Timeless Passion
+        </p>
+        <div class="flex justify-center">
+          <div class="w-24 h-1 bg-[#d4af37] rounded-full"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured Articles Section -->
+  <section class="py-16 bg-gradient-to-b from-white to-[#f8f5f0]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#0a2e5c] mb-4">Featured Articles</h2>
+        <div class="w-20 h-1 bg-[#d4af37] mx-auto"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {featuredArticles.map((article, index) => (
+          <div 
+            class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl border border-[#e2e8f0]"
+            style="animation-delay: ${index * 100}ms"
+          >
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <span class="inline-block px-3 py-1 bg-[#d4af37] text-[#0a2e5c] text-xs font-bold rounded-full">
+                  {article.category}
+                </span>
+                <span class="text-sm text-gray-500">{article.date}</span>
+              </div>
+              <h3 class="text-xl font-bold text-[#0a2e5c] mb-3">{article.title}</h3>
+              <p class="text-gray-600 mb-4">{article.excerpt}</p>
+              <button class="flex items-center text-[#0a2e5c] font-semibold group">
+                Read More
+                <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Archive Section -->
+  <section class="py-16 bg-[#f8f5f0]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#0a2e5c] mb-4">Article Archive</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Dive into our comprehensive collection of stories from across the Chiefs' rich history</p>
+        <div class="w-20 h-1 bg-[#d4af37] mx-auto mt-4"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {archiveArticles.map((article, index) => (
+          <div class="group">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden border border-[#e2e8f0] transition-all duration-300 group-hover:shadow-lg">
+              <div class="p-6">
+                <h3 class="text-lg font-bold text-[#0a2e5c] mb-2 group-hover:text-[#d4af37] transition-colors duration-200">{article.title}</h3>
+                <p class="text-gray-600 text-sm mb-4">{article.excerpt}</p>
+                <div class="flex justify-between items-center">
+                  <span class="text-xs text-gray-500">{article.date}</span>
+                  <button class="text-[#0a2e5c] text-sm font-medium group-hover:text-[#d4af37] transition-colors duration-200">
+                    Read Story
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      <div class="text-center mt-12">
+        <button class="px-8 py-3 bg-[#0a2e5c] text-white font-semibold rounded-full hover:bg-[#d4af37] hover:text-[#0a2e5c] transition-colors duration-300 border-2 border-[#0a2e5c]">
+          Load More Articles
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="py-16 bg-gradient-to-r from-[#0a2e5c] to-[#2c4a7a] text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Stay Connected to Chiefs Kingdom</h2>
+        <p class="text-xl text-white/80 mb-8">Subscribe to our newsletter for the latest articles and exclusive content</p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+          <input 
+            type="email" 
+            placeholder="Your email address" 
+            class="flex-grow px-6 py-4 rounded-full text-[#0a2e5c] focus:outline-none focus:ring-2 focus:ring-[#d4af37]"
+          />
+          <button class="px-8 py-4 bg-[#d4af37] text-[#0a2e5c] font-bold rounded-full hover:bg-[#c9a52e] transition-colors duration-300 whitespace-nowrap">
+            Subscribe
+          </button>
+        </div>
+        
+        <p class="text-white/60 text-sm mt-4">No spam, unsubscribe anytime</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="bg-[#0a2e5c] text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Chiefs Chronicle</h3>
+          <p class="text-white/80">Chronicle the heartbeat of Chiefs Kingdom with timeless passion for the game and its legends.</p>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Navigation</h4>
+          <ul class="space-y-2">
+            <li><a href="/" class="text-white/80 hover:text-[#d4af37] transition-colors">Home</a></li>
+            <li><a href="/articles" class="text-white/80 hover:text-[#d4af37] transition-colors">Articles</a></li>
+            <li><a href="/history" class="text-white/80 hover:text-[#d4af37] transition-colors">History</a></li>
+            <li><a href="/about" class="text-white/80 hover:text-[#d4af37] transition-colors">About</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-4">Connect</h4>
+          <div class="flex space-x-4">
+            <a href="#" class="bg-white/10 p-3 rounded-full hover:bg-[#d4af37] transition-colors duration-300">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="bg-white/10 p-3 rounded-full hover:bg-[#d4af37] transition-colors duration-300">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="bg-white/10 p-3 rounded-full hover:bg-[#d4af37] transition-colors duration-300">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-white/10 mt-12 pt-8 text-center text-white/60">
+        <p>&copy; {new Date().getFullYear()} Chiefs Chronicle. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+  
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .article-card {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .article-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  
+  .gradient-border {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #0a2e5c, #d4af37, #0a2e5c);
+    z-index: -1;
+    border-radius: 12px;
+    animation: gradientShift 5s linear infinite;
+    background-size: 400% 400%;
+  }
+  
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+</style>

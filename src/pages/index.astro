@@ -1,0 +1,267 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Home - Chiefs Chronicle";
+const pageDescription = "Immerse yourself in the timeless passion of Chiefs Kingdom. From historic triumphs to the latest game-day thrills, Chiefs Chronicle captures the nostalgic spirit of Kansas City Chiefs fandom with engaging stories and classic sports journalism.";
+
+const latestStories = [
+  {
+    title: "Mahomes Lights Up Arrowhead in Overtime Victory",
+    excerpt: "Patrick Mahomes' clutch performance in the final minutes sealed a thrilling 24-21 win over the Denver Broncos.",
+    category: "Game Recaps",
+    date: "Nov 15, 2023"
+  },
+  {
+    title: "The Evolution of Kansas City's Legendary Defense",
+    excerpt: "A deep dive into how the Chiefs' defensive unit transformed from a struggling group to a championship contender.",
+    category: "Historical Analysis",
+    date: "Nov 12, 2023"
+  },
+  {
+    title: "Rookie Review: TreyaddAll of the Future",
+    excerpt: "Breaking down the promising young talent and his impact on the Chiefs' offensive scheme.",
+    category: "Player Spotlights",
+    date: "Nov 10, 2023"
+  }
+];
+
+const featuredPlayers = [
+  {
+    name: "Patrick Mahomes",
+    position: "Quarterback",
+    stats: "4,892 Yards, 43 TDs"
+  },
+  {
+    name: "Travis Kelce",
+    position: "TE",
+    stats: "1,234 Yards, 12 TDs"
+  },
+  {
+    name: "Chris Jones",
+    position: "DT",
+    stats: "11 Sacks, 72 TFL"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <div class="relative bg-gradient-to-r from-primary to-accent py-24 md:py-32 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEiIGZpbGw9IiNmZmYiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=')]"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          Welcome to <span class="text-accent">Chiefs Chronicle</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-white/90 mb-8 font-serif italic">
+          Chronicling the Heartbeat of Chiefs Kingdom with Timeless Passion
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <button class="bg-white text-primary hover:bg-gray-100 font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105">
+            Read Latest Stories
+          </button>
+          <button class="border-2 border-white text-white hover:bg-white hover:text-primary font-bold py-3 px-6 rounded-full transition-all duration-300">
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Welcome Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">Step Into the Kingdom</h2>
+        <div class="w-24 h-1 bg-accent mx-auto mb-8"></div>
+        <p class="text-lg text-gray-700 leading-relaxed font-serif">
+          Step into the storied world of the Kansas City Chiefs, where every roar from Arrowhead Stadium echoes through generations. 
+          At <span class="font-bold text-primary">Chiefs Chronicle</span>, we blend the nostalgia of yesteryear's gridiron legends with the pulse-pounding excitement of today's battles. 
+          Whether you're reliving the glory days of Len Dawson or anticipating Patrick Mahomes' next masterpiece, 
+          our classic sports journal is your timeless companion in Chiefs fandom.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Stories Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
+        <div>
+          <h2 class="text-3xl font-bold text-primary mb-2">Latest from the Kingdom</h2>
+          <p class="text-gray-600">Discover the freshest insights into your favorite team</p>
+        </div>
+        <a href="/stories" class="mt-4 md:mt-0 text-accent hover:text-primary font-semibold flex items-center">
+          View All Stories
+          <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {latestStories.map((story, index) => (
+          <div key={index} class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+            <div class="h-48 bg-gradient-to-r from-primary to-accent relative">
+              <div class="absolute top-4 right-4 bg-accent text-white text-sm font-bold px-3 py-1 rounded-full">
+                {story.category}
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="text-sm text-gray-500 mb-2">{story.date}</div>
+              <h3 class="text-xl font-bold text-primary mb-3">{story.title}</h3>
+              <p class="text-gray-600 mb-4">{story.excerpt}</p>
+              <a href="#" class="text-accent hover:text-primary font-semibold flex items-center">
+                Read Story
+                <i class="fas fa-arrow-right ml-2 text-sm"></i>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Section -->
+  <section class="py-16 bg-gradient-to-r from-primary to-accent text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">From Glory Days to Game Day Thrills</h2>
+        <div class="w-24 h-1 bg-white mx-auto mb-8"></div>
+        <p class="text-xl mb-8 text-white/90">
+          Explore our rich archive of classic moments and timeless tales that define the Chiefs Kingdom
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Historic Triumphs</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <i class="fas fa-trophy text-accent mt-1 mr-3"></i>
+              <span class="text-white/90">1970s Championship Runs</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-trophy text-accent mt-1 mr-3"></i>
+              <span class="text-white/90">Super Bowl LVII Victory</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-trophy text-accent mt-1 mr-3"></i>
+              <span class="text-white/90">The Arrowhead Stadium Legacy</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-trophy text-accent mt-1 mr-3"></i>
+              <span class="text-white/90">Legendary Players Through the Decades</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8">
+          <div class="text-center mb-6">
+            <i class="fas fa-calendar-alt text-4xl text-accent mb-4"></i>
+            <h3 class="text-2xl font-bold">Upcoming Matches</h3>
+          </div>
+          
+          <div class="space-y-4">
+            <div class="flex justify-between items-center p-4 bg-white/10 rounded-lg">
+              <div>
+                <div class="font-bold">Kansas City Chiefs</div>
+                <div class="text-sm text-white/80">vs. Denver Broncos</div>
+              </div>
+              <div class="text-right">
+                <div class="font-bold">Dec 10, 2023</div>
+                <div class="text-sm text-white/80">8:20 PM CT</div>
+              </div>
+            </div>
+            
+            <div class="flex justify-between items-center p-4 bg-white/10 rounded-lg">
+              <div>
+                <div class="font-bold">Kansas City Chiefs</div>
+                <div class="text-sm text-white/80">at Las Vegas Raiders</div>
+              </div>
+              <div class="text-right">
+                <div class="font-bold">Dec 17, 2023</div>
+                <div class="text-sm text-white/80">1:00 PM CT</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Player Spotlight Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-2">Player Spotlights</h2>
+        <p class="text-gray-600">From rookies to veterans, uncovering the faces behind the legend</p>
+        <div class="w-24 h-1 bg-accent mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {featuredPlayers.map((player, index) => (
+          <div key={index} class="bg-gradient-to-br from-gray-50 to-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+            <div class="h-48 bg-gradient-to-r from-primary to-accent flex items-center justify-center">
+              <div class="bg-white rounded-full w-24 h-24 flex items-center justify-center">
+                <i class="fas fa-user text-4xl text-primary"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold text-primary mb-1">{player.name}</h3>
+              <p class="text-accent font-semibold mb-3">{player.position}</p>
+              <div class="bg-gray-100 rounded-lg p-4">
+                <p class="text-gray-700 font-medium">{player.stats}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="py-16 bg-gradient-to-r from-gray-900 to-primary text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-4">Join the Kingdom</h2>
+        <p class="text-xl text-gray-300 mb-8">
+          Stay connected with the latest Chiefs news, stories, and exclusive content
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+          <input 
+            type="email" 
+            placeholder="Your email address" 
+            class="flex-grow px-6 py-4 rounded-full text-gray-800 focus:outline-none focus:ring-2 focus:ring-accent"
+          />
+          <button class="bg-accent hover:bg-yellow-600 text-primary font-bold py-4 px-8 rounded-full transition-all duration-300 whitespace-nowrap">
+            Subscribe Now
+          </button>
+        </div>
+        
+        <p class="mt-4 text-gray-400 text-sm">
+          No spam, unsubscribe anytime
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+  
+  .hero-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c0-3.866 3.134-7 7-7 3.866 0 7 3.134 7 7 0 3.866-3.134 7-7 7-3.866 0-7-3.134-7-7zm48 29c0-3.866 3.134-7 7-7 3.866 0 7 3.134 7 7 0 3.866-3.134 7-7 7-3.866 0-7-3.134-7-7zm-29-7c-3.866 0-7-3.134-7-7 0-3.866 3.134-7 7-7 3.866 0 7 3.134 7 7 0 3.866-3.134 7-7 7zm-29 29c-3.866 0-7-3.134-7-7 0-3.866 3.134-7 7-7 3.866 0 7 3.134 7 7 0 3.866-3.134 7-7 7zm58-58c-3.866 0-7-3.134-7-7 0-3.866 3.134-7 7-7 3.866 0 7 3.134 7 7 0 3.866-3.134 7-7 7zM30 30c-3.866 0-7-3.134-7-7 0-3.866 3.134-7 7-7 3.866 0 7 3.134 7 7 0 3.866-3.134 7-7 7zm29 29c-3.866 0-7-3.134-7-7 0-3.866 3.134-7 7-7 3.866 0 7 3.134 7 7 0 3.866-3.134 7-7 7z' fill='%23d4af37' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
+  
+  .hover\:scale-105:hover {
+    transform: scale(1.05);
+  }
+  
+  .hover\:-translate-y-2:hover {
+    transform: translateY(-0.5rem);
+  }
+</style>
